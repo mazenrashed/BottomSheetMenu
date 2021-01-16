@@ -16,18 +16,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         findViewById<View>(R.id.tryMenu).setOnClickListener {
             val menuItems = arrayListOf(
-                        MenuBottomSheetItem("تعيين كمقروء", R.drawable.ic_launcher_foreground)
+                MenuBottomSheetItem("Turn alarm on", R.drawable.ic_launcher_foreground),
+                MenuBottomSheetItem("Turn alarm off", R.drawable.ic_launcher_foreground)
             )
 
             val bottomSheet = MenuBottomSheet.Builder()
-                    .setMenuRes(R.menu.test_menu)
+                .setMenuRes(R.menu.test_menu)
 //                    .setMenuItems(menuItems)
-                    .build()
+                .build()
 
             bottomSheet.onSelectMenuItemListener = { position: Int, id: Int? ->
                 when (id) {
-                    R.id.option1 -> Toast.makeText(this, "Read", Toast.LENGTH_SHORT).show()
-                    R.id.option2 -> Toast.makeText(this, "Read", Toast.LENGTH_SHORT).show()
+                    R.id.option1 -> Toast.makeText(this, "On", Toast.LENGTH_SHORT).show()
+                    R.id.option2 -> Toast.makeText(this, "Off", Toast.LENGTH_SHORT).show()
                     else -> Toast.makeText(this, "Nothing", Toast.LENGTH_SHORT).show()
                 }
             }
