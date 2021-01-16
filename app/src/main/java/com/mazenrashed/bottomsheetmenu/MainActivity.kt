@@ -16,12 +16,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         findViewById<View>(R.id.tryMenu).setOnClickListener {
             val menuItems = arrayListOf(
-                MenuBottomSheetItem("Turn alarm on", R.drawable.ic_launcher_foreground),
-                MenuBottomSheetItem("Turn alarm off", R.drawable.ic_launcher_foreground)
+                MenuBottomSheetItem("Turn alarm on", R.drawable.ic_baseline_alarm_on_24),
+                MenuBottomSheetItem("Turn alarm off", R.drawable.ic_baseline_alarm_off_24)
             )
 
             val bottomSheet = MenuBottomSheet.Builder()
                 .setMenuRes(R.menu.test_menu)
+                .closeAfterSelect(true)
 //                    .setMenuItems(menuItems)
                 .build()
 
