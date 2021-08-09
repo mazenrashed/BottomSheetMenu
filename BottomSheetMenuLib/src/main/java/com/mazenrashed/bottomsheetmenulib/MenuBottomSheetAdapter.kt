@@ -1,6 +1,7 @@
 package com.mazenrashed.bottomsheetmenulib
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import com.mazenrashed.bottomsheetmenulib.base.BaseAdapter
 import com.mazenrashed.bottomsheetmenulib.base.BaseViewHolder
@@ -18,6 +19,8 @@ class MenuBottomSheetAdapter :
                 this.textView.text = item?.title
                 item?.iconRes?.let { this.icon.setImageResource(it) }
                 item?.iconDrawable?.let { this.icon.setImageDrawable(it) }
+                this.icon.visibility =
+                    if (item?.iconDrawable == null && item?.iconRes == null) View.GONE else View.VISIBLE
             }
         }
 
